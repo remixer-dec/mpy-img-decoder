@@ -36,9 +36,9 @@ png/jpeg function works as a constructor and returns a ~Renderer class isntance
 **checkAndRender([w, h, wxh])** - function, checks if width or height of the image or their product are less than specified ones, then renders the image, supports all parameters for render function  
   
 ## References  
-[https://www.w3.org/TR/2003/REC-PNG-20031110/](Official PNG specification)  
-[http://docs.micropython.org/en/v1.9.3/pyboard/reference/speed_python.html](Maximising MicroPython Speed)  
-[http://www.schaik.com/pngsuite/](PNG Test Suite)  
-[https://pyokagan.name/blog/2019-10-14-png/](Writing a  PNG decoder)  
-[https://www.w3.org/Graphics/JPEG/itu-t81.pdf](Official JPEG specification)  
+[Official PNG specification](https://www.w3.org/TR/2003/REC-PNG-20031110/)  
+[Maximising MicroPython Speed](http://docs.micropython.org/en/v1.9.3/pyboard/reference/speed_python.html)  
+[PNG Test Suite](http://www.schaik.com/pngsuite/)  
+[Writing a  PNG decoder](https://pyokagan.name/blog/2019-10-14-png/)  
+[Official JPEG specification](https://www.w3.org/Graphics/JPEG/itu-t81.pdf)  
 
