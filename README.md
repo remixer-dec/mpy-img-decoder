@@ -7,7 +7,7 @@ Some board firmware forks are not open source and it's not possible to add extra
 Written from scratch, highly optimized, supports all bit depth/color modes, supports all critical PNG chunks, 1 background-color based transparency, multi-part IDAT chunks, does not support Adam7 interlacing.
 
 ## JPG decoder
-Ported from python2 [enmasse/jpeg_read](https://github.com/enmasse/jpeg_read) and optimized a little bit to work on 80kb of free RAM. It's still much slower than PNG decoder and requires much more RAM to decode. Image dimensions affect the amount of required RAM. Why port this old decoder when there are many new ones? I tried a few of them, and looks like they were tested on 1 image and are can't even handle images like [this one](https://static-cdn.jtvnw.net/ttv-static/404_preview-80x44.jpg). Is it possible to create a more optimized decoder? Probably, yes.  
+Ported from python2 [enmasse/jpeg_read](https://github.com/enmasse/jpeg_read) and optimized a little bit to work on 80kb of free RAM. It's still much slower than PNG decoder and requires much more RAM to decode. Image dimensions affect the amount of required RAM. Why port this old decoder when there are many new ones? I tried a few of them, and looks like they were tested on 1 image and can't even handle images like [this one](https://static-cdn.jtvnw.net/ttv-static/404_preview-80x44.jpg). Is it possible to create a more optimized decoder? Probably, yes.  
 
 # Usage
 ```python
