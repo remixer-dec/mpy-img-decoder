@@ -66,9 +66,9 @@ def png(source, callback=print, cache=False, bg=(0, 0, 0), fastalpha=True):
         fg = float(g)
         fb = float(b)
         fa = float(truediv(a, 255))
-        R = round(fr * fa)
-        G = round(fg * fa)
-        B = round(fb * fa)
+        R = round(fr * fa + (1.0 - fa) * float(bg[0]))
+        G = round(fg * fa + (1.0 - fa) * float(bg[1]))
+        B = round(fb * fa + (1.0 - fa) * float(bg[2]))
         return R, G, B
 
     @micropython.viper
