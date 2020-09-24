@@ -128,7 +128,7 @@ def png(source, callback=print, cache=False, bg=(0, 0, 0), fastalpha=True):
     def show(x, y, c: int):
         if cache:
             cached.append(c)
-        if c > 0:
+        if c >= 0:
             callback(x, y, c)
 
     @micropython.viper
@@ -276,7 +276,7 @@ def png(source, callback=print, cache=False, bg=(0, 0, 0), fastalpha=True):
         W, H, D, C = WHDC
         for y in range(H):
             for x in range(W):
-                if cached[i] > 0:
+                if cached[i] >= 0:
                     callback(rx + x, ry + y, cached[i])
                 i += 1
 

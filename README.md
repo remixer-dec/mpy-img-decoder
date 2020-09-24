@@ -1,10 +1,10 @@
 # mpy-img-decoder
 PNG and JPEG decoder / parser / renderer in pure micropython. Decodes PNG and JPEG files/byte buffers and outputs pixel colors  
 ### Why pure micropython and not C module?
-Some board firmware forks are not open source and it's not possible to add extra C modules to them.  
+At the time of developing this project I did not know about dynamic native modules in micropython.  
 
 ## PNG decoder
-Written from scratch, highly optimized, supports all bit depth/color modes, supports all critical PNG chunks, 1 background-color based transparency, multi-part IDAT chunks, does not support Adam7 interlacing.
+Written from scratch, highly optimized for speed, supports all bit depth/color modes, supports all critical PNG chunks, 1 background-color based transparency, multi-part IDAT chunks, does not support Adam7 interlacing. The main memory bottleneck is in zlib-decompression part. For some reason uzlib.DecompIO doesn't work as expected, so this library instead extracts all IDAT chunks and decompresses them with regular uzlib.decompress, which consumes more memory.  
 
 ## JPG decoder
 Ported from python2 [enmasse/jpeg_read](https://github.com/enmasse/jpeg_read) and optimized a little bit to work on 80kb of free RAM. It's still much slower than PNG decoder and requires much more RAM to decode. Image dimensions affect the amount of required RAM. Why port this old decoder when there are many new ones? I tried a few of them, and looks like they were tested on 1 image and can't even handle images like [this one](https://static-cdn.jtvnw.net/ttv-static/404_preview-80x44.jpg). Is it possible to create a more optimized decoder? Probably, yes.  
